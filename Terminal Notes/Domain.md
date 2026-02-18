@@ -24,7 +24,7 @@ $TTL    60 # time to live        # rr for roll
 ns1     IN      A       <added_ip>
 ```
 
-[Line 4](Domain/Line%204%2030be635b702380f189d7d58bf8b130f5.md)
+[Line 4](https://github.com/hamimLohani/Networking-Lab/blob/main/Terminal%20Notes/Line%204.md)
 
 - Serial → Increment when zone update
 - Refresh → Secondary server checks every X second
