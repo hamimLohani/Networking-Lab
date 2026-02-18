@@ -4,15 +4,15 @@
 - Check dev name - `ip a`
 - Add IP - `sudo addr add <ip> dev <dev_name>`
 - Change to bind directory - `cd /etc/bind`
-- copy all text - `cat db.local`
-- Create zone file - `sudo nano db.s39.zhjlab.bd`
+- copy all text on this zone file - `cat db.local`
+- Create new zone file - `sudo nano db.s39.zhjlab.bd`
 - paste it
 
 ```bash
 ;
 ; BIND data file for local loopback interface
 ;
-$TTL    60                   # rr for roll
+$TTL    60 # time to live        # rr for roll
 @       IN      SOA     ns1.s<rr>.zhjlab.bd. bsse16<rr>@iit.du.ac.bd. (
                               3         ; Serial
                          604800         ; Refresh
@@ -24,7 +24,17 @@ $TTL    60                   # rr for roll
 ns1     IN      A       <added_ip>
 ```
 
-- `sudo nano named.conf.local`
+[Line 4](Domain/Line%204%2030be635b702380f189d7d58bf8b130f5.md)
+
+- Serial → Increment when zone update
+- Refresh → Secondary server checks every X second
+- Retry → If failed, retry after X second
+- Expire → After this, secondary discards
+- Negative TTL → Cache negative responses
+- @ IN NS [ns1.s39.zhjlab.bd](http://ns1.s39.zhjlab.bd/). → This domain is served by ns1
+- [ns1.s39.zhjlab.bd](http://ns1.s39.zhjlab.bd/) → 172.17.100.39
+- DNS = name → IP translation
+- Add zone file - `sudo nano named.conf.local`
 - Paste
 
 ```bash
@@ -42,7 +52,7 @@ zone "s<rr>.zhjlab.bd" { # rr for roll
 };
 ```
 
-- `sudo tail -f /var/log/syslog`
-- `sudo systemctl restart named.service`
-- for reload - `sudo systemctl reload bind9.service`
+- Show live logs - `sudo tail -f /var/log/syslog`
+- Restart DNS server - `sudo systemctl restart named.service`
+- Reload - `sudo systemctl reload bind9.service`
 - `dig [s39.zhjlab.bd](http://s39.zhjlab.bd/) SOA @172.17.100.39` ANSWER=1
