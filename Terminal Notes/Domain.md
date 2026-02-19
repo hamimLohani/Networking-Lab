@@ -2,7 +2,7 @@
 
 - Install bind9 - `sudo apt install bind9`
 - Check dev name - `ip a`
-- Add IP - `sudo addr add <ip> dev <dev_name>`
+- Add IP - `sudo ip addr add <ip> dev <dev_name>`
 - Change to bind directory - `cd /etc/bind`
 - copy all text on this zone file - `cat db.local`
 - Create new zone file - `sudo nano db.s39.zhjlab.bd`
@@ -13,7 +13,7 @@
 ; BIND data file for local loopback interface
 ;
 $TTL    60 # time to live        # rr for roll
-@       IN      SOA     ns1.s<rr>.zhjlab.bd. bsse16<rr>@iit.du.ac.bd. (
+@       IN      SOA     ns1.s<rr>.zhjlab.bd. bsse16<rr>.iit.du.ac.bd. (
                               3         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
@@ -21,6 +21,7 @@ $TTL    60 # time to live        # rr for roll
                          604800 )       ; Negative Cache TTL
 ;
 @       IN      NS      ns1.s<rr>.zhjlab.bd. # rr for roll
+@       IN      A       <added_ip>
 ns1     IN      A       <added_ip>
 ```
 
