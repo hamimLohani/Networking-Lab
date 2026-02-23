@@ -56,11 +56,11 @@ or - `sudo ip addr show <interface>`
 
 Mac - `ifconfig <interface> | grep ether`
 
-## Look-back IP
+## Loop-back IP
 
-Mac - `sudo ifconfig <lookback_interface> alias <ip> netmask <mask_ip>`
+Mac - `sudo ifconfig <loopback_interface> alias <ip> netmask <mask_ip>`
 
-Linux - `sudo addr add <ip> dev <lookback_interface>`
+Linux - `sudo addr add <ip> dev <loopback_interface>`
 
 in Linux ip is to be with mask (/n)
 
@@ -70,10 +70,10 @@ Mac - `sudo addr del <ip> dev <lookback_interface>`
 
 Linux - `sudo ifconfig <lookback_interface> -alias <ip>`
 
-# Ping Look-back IP
+# Ping Loop-back IP
 
-## Trace Look-back IP
+## Trace Loop-back IP
 
-Linux - `sudo ip route add <other_lookback_ip> via <other_public_ip> dev <interface>`
+Linux - `sudo ip route add <other_loopback_ip> via <other_public_ip> dev <interface>`
 
 ping - `ping <ip>`
