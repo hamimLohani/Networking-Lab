@@ -38,13 +38,13 @@ Mac - `sudo route delete default`
 
 ## Add IP
 
-Linux - `sudo addr add <ip> dev <interface>`
+Linux - `sudo ip addr add <ip> dev <interface>`
 
 Mac - `sudo ifconfig <interface> alias <ip> netmask <mask_ip>`
 
 ## Delete IP added ip
 
-Linux - `sudo addr del <ip> dev <interface>`
+Linux - `sudo ip addr del <ip> dev <interface>`
 
 Mac - `sudo ifconfig <interface> -alias <ip>`
 
@@ -60,15 +60,15 @@ Mac - `ifconfig <interface> | grep ether`
 
 Mac - `sudo ifconfig <loopback_interface> alias <ip> netmask <mask_ip>`
 
-Linux - `sudo addr add <ip> dev <loopback_interface>`
+Linux - `sudo ip addr add <ip> dev <loopback_interface>`
 
 in Linux ip is to be with mask (/n)
 
 ## Delete Added IP
 
-Mac - `sudo addr del <ip> dev <lookback_interface>`
+Linux - `sudo addr del <ip> dev <lookback_interface>`
 
-Linux - `sudo ifconfig <lookback_interface> -alias <ip>`
+Mac - `sudo ifconfig <lookback_interface> -alias <ip>`
 
 # Ping Loop-back IP
 

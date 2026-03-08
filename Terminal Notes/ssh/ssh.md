@@ -36,7 +36,7 @@ Mac - `sudo systemsetup -setremotelogin off`
 
 ## Change Port
 
-Linux, Mac path - `/etc/ssh/sshd_config`
+Linux, Mac path - `sudo nano /etc/ssh/sshd_config`
 
 uncomment port, then change
 

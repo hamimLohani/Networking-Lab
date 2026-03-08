@@ -1,11 +1,11 @@
 # Domain
 
 - Install bind9 - `sudo apt install bind9`
-- Check dev name - `ip a`
-- Add IP - `sudo ip addr add <ip> dev <dev_name>`
+- Check dev interface - `ip a`
+- Add IP - `sudo ip addr add <added_ip> dev <dev_name>`
 - Change to bind directory - `cd /etc/bind`
 - copy all text on this zone file - `cat db.local`
-- Create new zone file - `sudo nano db.s39.zhjlab.bd`
+- Create new zone file - `sudo nano db.s<rr>.zhjlab.bd`
 - paste it
 
 ```bash
@@ -56,4 +56,6 @@ zone "s<rr>.zhjlab.bd" { # rr for roll
 - Show live logs - `sudo tail -f /var/log/syslog`
 - Restart DNS server - `sudo systemctl restart named.service`
 - Reload - `sudo systemctl reload bind9.service`
-- `dig [s39.zhjlab.bd](http://s39.zhjlab.bd/) SOA @172.17.100.39` ANSWER=1
+- `dig [s39.zhjlab.bd](http://s39.zhjlab.bd/) SOA @172.17.100.39` 
+  - if `ANSWER=1` everything is fine 
+  - else check again

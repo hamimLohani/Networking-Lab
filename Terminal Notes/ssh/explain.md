@@ -12,7 +12,7 @@
 - **Enable ssh (macOS)**: `sudo systemsetup -setremotelogin on` turns on Remote Login, allowing SSH connections.
 - **Disable ssh (Linux)**: `sudo systemctl disable ssh` prevents SSH from starting automatically.
 - **Disable ssh (macOS)**: `sudo systemsetup -setremotelogin off` turns off Remote Login so SSH access is blocked.
-- **Change port config**: `/etc/ssh/sshd_config` is the main SSH server configuration file on both Linux and macOS; you edit and uncomment the `Port` line here to change the listen port.
+- **Change port config**: `sudo nano /etc/ssh/sshd_config` is the main SSH server configuration file on both Linux and macOS; you edit and uncomment the `Port` line here to change the listen port.
 - **Reboot**: `sudo reboot` restarts the machine (ensuring all service changes are fully applied).
 - **Delete known hosts (Linux)**: `rm .ssh/known_hosts ssh/known_hosts.old` removes stored host fingerprints from the user’s home directory.
 - **Delete known hosts (macOS)**: `rm ~/.ssh/known_hosts` clears known SSH host entries for the current user.

@@ -1,12 +1,12 @@
 # Apache
 
 - installation - `sudo apt install apache2`
-- verify - `systemctl status apache2`
+- Check status - `sudo systemctl status apache2`
 - check listening port - `ss -tl`
 - it will show the port number 80 - `ss -tln`
 - rename - `sudo mv index.html index.html.orig` in the directory  - `/var/www/html`
-- Change directory - `cd /etc/apache2/sites-available`
-- make copy - `sudo cp 000-default.conf 001-mysite.conf`
+- Change directory (virtual host dir) - `cd /etc/apache2/sites-available`
+- make copy (virtual host) - `sudo cp 000-default.conf 001-mysite.conf`
 - edit - `sudo nano 001-mysite.conf`
 
 ```jsx
@@ -39,11 +39,15 @@
 172.17.100.55 www.s55.zhjlab.bd
 172.17.100.39 www.s39.zhjlab.bd
 
-# add your domain
+# add your domain with ip
 ```
 
-- Check - `sudo apachectl configtest`
-- `sudo a2ensite 001-mysite.conf`
-- `sudo systemctl reload apache2`
-- check sites enable - `ls -l ../sites-enabled/`
+- Check configuration (syntax) - `sudo apachectl configtest`
+  - if `ok` its fine 
+  - else check systax
+- Enable virtual host - `sudo a2ensite 001-mysite.conf`
+- Start virtual site - `sudo systemctl start apache2`
+- Stop virtual site - `sudo systemctl stop apache2`
+- Reload virtual site - `sudo systemctl reload apache2`
+- check sites enable - `ls -l /etc/apache2/sites-enabled/`
 - then test in the browser - [`http://www.s47.zhjlab.bd`](http://www.s47.zhjlab.bd/)
