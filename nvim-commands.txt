@@ -1,0 +1,18 @@
+Commands for NVIM
+
+    Command                   |  What it does
+------------------------------+-------------------------------------------------
+    :w                        |  Save the file (write)
+    :q                        |  Quit
+    :wq or :x                 |  Save and quit
+    :q!                       |  Quit without saving       
+    :e filename               |  Open another file
+    :vsp filename             |  Open file in vertical split
+    :sp filename              |  Open file in horizontal split
+    :set number               |  Show line numbers
+    :noh                      |  Clear search highlights
+    :!command                 |  Run a shell command (like :!ls)
+    :colorscheme onedark      |  Change color theme
+    :hi Normal guibg=#1e1e2e  |  Change text background color
+
+
